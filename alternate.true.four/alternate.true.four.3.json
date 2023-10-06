@@ -1,0 +1,173 @@
+{
+     "allOf": [ { "$ref": "#/definitions/urn:truevar1/definitions/afterq1" },
+                { "$ref": "#/definitions/urn:falsevar1/definitions/afterq1" }
+	     ],
+     "definitions": {
+        "urn:truevar1": {
+            "definitions": {
+                "x1":     {  },
+                "not.x1": { "not": {} },
+                "afterq1": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar2/definitions/afterq2" },
+                                        { "$ref": "#/definitions/urn:falsevar2/definitions/afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar1": {
+            "definitions": {
+                "x1":     { "not": {} },
+                "not.x1": {  },
+                "afterq1": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar2/definitions/afterq2" },
+                                        { "$ref": "#/definitions/urn:falsevar2/definitions/afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar2": {
+            "definitions": {
+                "x2":     {  },
+                "not.x2": { "not": {} },
+                "afterq2": { 
+			     "allOf": [ { "$ref": "#/definitions/urn:truevar3/definitions/afterq3" },
+                                        { "$ref": "#/definitions/urn:falsevar3/definitions/afterq3" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar2": {
+            "definitions": {
+                "x2":     { "not": {} },
+                "not.x2": {  },
+                "afterq2": { 
+			     "allOf": [ { "$ref": "#/definitions/urn:truevar3/definitions/afterq3" },
+                                        { "$ref": "#/definitions/urn:falsevar3/definitions/afterq3" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar3": {
+            "definitions": {
+                "x3":     {  },
+                "not.x3": { "not": {} },
+                "afterq3": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar4/definitions/afterq4" },
+                                        { "$ref": "#/definitions/urn:falsevar4/definitions/afterq4" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar3": {
+            "definitions": {
+                "x3":     { "not": {} },
+                "not.x3": {  },
+                "afterq3": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar4/definitions/afterq4" },
+                                        { "$ref": "#/definitions/urn:falsevar4/definitions/afterq4" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar4": {
+            "definitions": {
+                "x4":     {  },
+                "not.x4": { "not": {} },
+                "afterq4": { 
+			     "allOf": [ { "$ref": "#/definitions/urn:truevar5/definitions/afterq5" },
+                                        { "$ref": "#/definitions/urn:falsevar5/definitions/afterq5" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar4": {
+            "definitions": {
+                "x4":     { "not": {} },
+                "not.x4": {  },
+                "afterq4": { 
+			     "allOf": [ { "$ref": "#/definitions/urn:truevar5/definitions/afterq5" },
+                                        { "$ref": "#/definitions/urn:falsevar5/definitions/afterq5" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar5": {
+            "definitions": {
+                "x5":     {  },
+                "not.x5": { "not": {} },
+                "afterq5": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar6/definitions/afterq6" },
+                                        { "$ref": "#/definitions/urn:falsevar6/definitions/afterq6" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar5": {
+            "definitions": {
+                "x5":     { "not": {} },
+                "not.x5": {  },
+                "afterq5": { 
+			     "anyOf": [ { "$ref": "#/definitions/urn:truevar6/definitions/afterq6" },
+                                        { "$ref": "#/definitions/urn:falsevar6/definitions/afterq6" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar6": {
+            "definitions": {
+                "x6":     {  },
+                "not.x6": { "not": {} },
+                "afterq6": { "$ref": "#/definitions/urn:phi/definitions/phi" }
+            }
+        },
+        "urn:falsevar6": {
+            "definitions": {
+                "x6":     { "not": {} },
+                "not.x6": {  },
+                "afterq6": { "$ref": "#/definitions/urn:phi/definitions/phi" }
+            }
+        },
+        "urn:phi": {
+             "definitions": {
+                "phi": {
+                    
+                   "allOf": [
+                       { "anyOf": [
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar1/definitions/x1" },
+                                        { "$ref": "#/definitions/urn:truevar2/definitions/x2" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar1/definitions/not.x1" },
+                                        { "$ref": "#/definitions/urn:truevar2/definitions/not.x2" }
+				      ]
+			   } 
+                         ]
+                       },
+                       { "anyOf": [
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar3/definitions/x3" },
+                                        { "$ref": "#/definitions/urn:truevar4/definitions/x4" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar3/definitions/not.x3" },
+                                        { "$ref": "#/definitions/urn:truevar4/definitions/not.x4" }
+				      ]
+			   } 
+                         ]
+                       },
+                       { "anyOf": [
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar5/definitions/x5" },
+                                        { "$ref": "#/definitions/urn:truevar6/definitions/x6" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$ref": "#/definitions/urn:truevar5/definitions/not.x5" },
+                                        { "$ref": "#/definitions/urn:truevar6/definitions/not.x6" }
+				      ]
+			   } 
+                         ]
+                       }
+                   ]
+                }
+             }
+        }
+    }
+}

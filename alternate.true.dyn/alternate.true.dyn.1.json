@@ -1,0 +1,70 @@
+{
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "$id": "urn:psi",
+     "allOf": [ { "$ref": "urn:truevar1#afterq1" },
+                { "$ref": "urn:falsevar1#afterq1" }
+	     ],
+     "$defs": {
+        "urn:truevar1": {
+            "$id": "urn:truevar1",
+            "$defs": {
+                "x1":     { "$dynamicAnchor": "x1",     "anyOf": [true] },
+                "not.x1": { "$dynamicAnchor": "not.x1", "anyOf": [false] },
+                "afterq1": { "$anchor": "afterq1",
+			     "anyOf": [ { "$ref": "urn:truevar2#afterq2" },
+                                        { "$ref": "urn:falsevar2#afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar1": {
+            "$id": "urn:falsevar1",
+            "$defs": {
+                "x1":     { "$dynamicAnchor": "x1",     "anyOf": [false] },
+                "not.x1": { "$dynamicAnchor": "not.x1", "anyOf": [true] },
+                "afterq1": { "$anchor": "afterq1",
+			     "anyOf": [ { "$ref": "urn:truevar2#afterq2" },
+                                        { "$ref": "urn:falsevar2#afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar2": {
+            "$id": "urn:truevar2",
+            "$defs": {
+                "x2":     { "$dynamicAnchor": "x2",     "anyOf": [true] },
+                "not.x2": { "$dynamicAnchor": "not.x2", "anyOf": [false] },
+                "afterq2": { "$anchor": "afterq2", "$ref": "urn:phi#phi" }
+            }
+        },
+        "urn:falsevar2": {
+            "$id": "urn:falsevar2",
+            "$defs": {
+                "x2":     { "$dynamicAnchor": "x2",     "anyOf": [false] },
+                "not.x2": { "$dynamicAnchor": "not.x2", "anyOf": [true] },
+                "afterq2": { "$anchor": "afterq2", "$ref": "urn:phi#phi" }
+            }
+        },
+        "urn:phi": {
+             "$id": "urn:phi",
+             "$defs": {
+                "phi": {
+                   "$anchor": "phi", 
+                   "allOf": [
+                       { "anyOf": [
+                           { "allOf": [ { "$dynamicRef": "urn:truevar1#x1" },
+                                        { "$dynamicRef": "urn:truevar2#x2" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$dynamicRef": "urn:truevar1#not.x1" },
+                                        { "$dynamicRef": "urn:truevar2#not.x2" }
+				      ]
+			   } 
+                         ]
+                       }
+                   ]
+                }
+             }
+        }
+    }
+}

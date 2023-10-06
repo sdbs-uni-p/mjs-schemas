@@ -1,0 +1,247 @@
+{
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "$id": "urn:psi",
+     "allOf": [ { "$ref": "urn:truevar1#afterq1" },
+                { "$ref": "urn:falsevar1#afterq1" }
+	     ],
+     "$defs": {
+        "urn:truevar1": {
+            "$id": "urn:truevar1",
+            "$defs": {
+                "x1":     { "$dynamicAnchor": "x1",     "anyOf": [true] },
+                "not.x1": { "$dynamicAnchor": "not.x1", "anyOf": [false] },
+                "afterq1": { "$anchor": "afterq1",
+			     "anyOf": [ { "$ref": "urn:truevar2#afterq2" },
+                                        { "$ref": "urn:falsevar2#afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar1": {
+            "$id": "urn:falsevar1",
+            "$defs": {
+                "x1":     { "$dynamicAnchor": "x1",     "anyOf": [false] },
+                "not.x1": { "$dynamicAnchor": "not.x1", "anyOf": [true] },
+                "afterq1": { "$anchor": "afterq1",
+			     "anyOf": [ { "$ref": "urn:truevar2#afterq2" },
+                                        { "$ref": "urn:falsevar2#afterq2" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar2": {
+            "$id": "urn:truevar2",
+            "$defs": {
+                "x2":     { "$dynamicAnchor": "x2",     "anyOf": [true] },
+                "not.x2": { "$dynamicAnchor": "not.x2", "anyOf": [false] },
+                "afterq2": { "$anchor": "afterq2",
+			     "allOf": [ { "$ref": "urn:truevar3#afterq3" },
+                                        { "$ref": "urn:falsevar3#afterq3" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar2": {
+            "$id": "urn:falsevar2",
+            "$defs": {
+                "x2":     { "$dynamicAnchor": "x2",     "anyOf": [false] },
+                "not.x2": { "$dynamicAnchor": "not.x2", "anyOf": [true] },
+                "afterq2": { "$anchor": "afterq2",
+			     "allOf": [ { "$ref": "urn:truevar3#afterq3" },
+                                        { "$ref": "urn:falsevar3#afterq3" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar3": {
+            "$id": "urn:truevar3",
+            "$defs": {
+                "x3":     { "$dynamicAnchor": "x3",     "anyOf": [true] },
+                "not.x3": { "$dynamicAnchor": "not.x3", "anyOf": [false] },
+                "afterq3": { "$anchor": "afterq3",
+			     "anyOf": [ { "$ref": "urn:truevar4#afterq4" },
+                                        { "$ref": "urn:falsevar4#afterq4" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar3": {
+            "$id": "urn:falsevar3",
+            "$defs": {
+                "x3":     { "$dynamicAnchor": "x3",     "anyOf": [false] },
+                "not.x3": { "$dynamicAnchor": "not.x3", "anyOf": [true] },
+                "afterq3": { "$anchor": "afterq3",
+			     "anyOf": [ { "$ref": "urn:truevar4#afterq4" },
+                                        { "$ref": "urn:falsevar4#afterq4" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar4": {
+            "$id": "urn:truevar4",
+            "$defs": {
+                "x4":     { "$dynamicAnchor": "x4",     "anyOf": [true] },
+                "not.x4": { "$dynamicAnchor": "not.x4", "anyOf": [false] },
+                "afterq4": { "$anchor": "afterq4",
+			     "allOf": [ { "$ref": "urn:truevar5#afterq5" },
+                                        { "$ref": "urn:falsevar5#afterq5" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar4": {
+            "$id": "urn:falsevar4",
+            "$defs": {
+                "x4":     { "$dynamicAnchor": "x4",     "anyOf": [false] },
+                "not.x4": { "$dynamicAnchor": "not.x4", "anyOf": [true] },
+                "afterq4": { "$anchor": "afterq4",
+			     "allOf": [ { "$ref": "urn:truevar5#afterq5" },
+                                        { "$ref": "urn:falsevar5#afterq5" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar5": {
+            "$id": "urn:truevar5",
+            "$defs": {
+                "x5":     { "$dynamicAnchor": "x5",     "anyOf": [true] },
+                "not.x5": { "$dynamicAnchor": "not.x5", "anyOf": [false] },
+                "afterq5": { "$anchor": "afterq5",
+			     "anyOf": [ { "$ref": "urn:truevar6#afterq6" },
+                                        { "$ref": "urn:falsevar6#afterq6" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar5": {
+            "$id": "urn:falsevar5",
+            "$defs": {
+                "x5":     { "$dynamicAnchor": "x5",     "anyOf": [false] },
+                "not.x5": { "$dynamicAnchor": "not.x5", "anyOf": [true] },
+                "afterq5": { "$anchor": "afterq5",
+			     "anyOf": [ { "$ref": "urn:truevar6#afterq6" },
+                                        { "$ref": "urn:falsevar6#afterq6" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar6": {
+            "$id": "urn:truevar6",
+            "$defs": {
+                "x6":     { "$dynamicAnchor": "x6",     "anyOf": [true] },
+                "not.x6": { "$dynamicAnchor": "not.x6", "anyOf": [false] },
+                "afterq6": { "$anchor": "afterq6",
+			     "allOf": [ { "$ref": "urn:truevar7#afterq7" },
+                                        { "$ref": "urn:falsevar7#afterq7" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar6": {
+            "$id": "urn:falsevar6",
+            "$defs": {
+                "x6":     { "$dynamicAnchor": "x6",     "anyOf": [false] },
+                "not.x6": { "$dynamicAnchor": "not.x6", "anyOf": [true] },
+                "afterq6": { "$anchor": "afterq6",
+			     "allOf": [ { "$ref": "urn:truevar7#afterq7" },
+                                        { "$ref": "urn:falsevar7#afterq7" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar7": {
+            "$id": "urn:truevar7",
+            "$defs": {
+                "x7":     { "$dynamicAnchor": "x7",     "anyOf": [true] },
+                "not.x7": { "$dynamicAnchor": "not.x7", "anyOf": [false] },
+                "afterq7": { "$anchor": "afterq7",
+			     "anyOf": [ { "$ref": "urn:truevar8#afterq8" },
+                                        { "$ref": "urn:falsevar8#afterq8" }
+				      ]
+			   }
+            }
+        },
+        "urn:falsevar7": {
+            "$id": "urn:falsevar7",
+            "$defs": {
+                "x7":     { "$dynamicAnchor": "x7",     "anyOf": [false] },
+                "not.x7": { "$dynamicAnchor": "not.x7", "anyOf": [true] },
+                "afterq7": { "$anchor": "afterq7",
+			     "anyOf": [ { "$ref": "urn:truevar8#afterq8" },
+                                        { "$ref": "urn:falsevar8#afterq8" }
+				      ]
+			   }
+            }
+        },
+        "urn:truevar8": {
+            "$id": "urn:truevar8",
+            "$defs": {
+                "x8":     { "$dynamicAnchor": "x8",     "anyOf": [true] },
+                "not.x8": { "$dynamicAnchor": "not.x8", "anyOf": [false] },
+                "afterq8": { "$anchor": "afterq8", "$ref": "urn:phi#phi" }
+            }
+        },
+        "urn:falsevar8": {
+            "$id": "urn:falsevar8",
+            "$defs": {
+                "x8":     { "$dynamicAnchor": "x8",     "anyOf": [false] },
+                "not.x8": { "$dynamicAnchor": "not.x8", "anyOf": [true] },
+                "afterq8": { "$anchor": "afterq8", "$ref": "urn:phi#phi" }
+            }
+        },
+        "urn:phi": {
+             "$id": "urn:phi",
+             "$defs": {
+                "phi": {
+                   "$anchor": "phi", 
+                   "allOf": [
+                       { "anyOf": [
+                           { "allOf": [ { "$dynamicRef": "urn:truevar1#x1" },
+                                        { "$dynamicRef": "urn:truevar2#x2" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$dynamicRef": "urn:truevar1#not.x1" },
+                                        { "$dynamicRef": "urn:truevar2#not.x2" }
+				      ]
+			   } 
+                         ]
+                       },
+                       { "anyOf": [
+                           { "allOf": [ { "$dynamicRef": "urn:truevar3#x3" },
+                                        { "$dynamicRef": "urn:truevar4#x4" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$dynamicRef": "urn:truevar3#not.x3" },
+                                        { "$dynamicRef": "urn:truevar4#not.x4" }
+				      ]
+			   } 
+                         ]
+                       },
+                       { "anyOf": [
+                           { "allOf": [ { "$dynamicRef": "urn:truevar5#x5" },
+                                        { "$dynamicRef": "urn:truevar6#x6" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$dynamicRef": "urn:truevar5#not.x5" },
+                                        { "$dynamicRef": "urn:truevar6#not.x6" }
+				      ]
+			   } 
+                         ]
+                       },
+                       { "anyOf": [
+                           { "allOf": [ { "$dynamicRef": "urn:truevar7#x7" },
+                                        { "$dynamicRef": "urn:truevar8#x8" }
+				      ]
+			   } ,
+                           { "allOf": [ { "$dynamicRef": "urn:truevar7#not.x7" },
+                                        { "$dynamicRef": "urn:truevar8#not.x8" }
+				      ]
+			   } 
+                         ]
+                       }
+                   ]
+                }
+             }
+        }
+    }
+}
